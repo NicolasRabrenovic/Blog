@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="{{ app.request.basepath }}/css/style.css">
+
+    </head>
+    <body>
+        <header>
+		<img src="{{ app.request.basepath }}/img/7.jpg" alt="Header">
+            <nav>
+			
+                <ul>
+                    <li class="logo">
+                        <a href="{{ app.url_generator.generate('home') }}">Nicolas Rabrenovic <br>
+						<p>A another blog... </p></a>
+                    </li>
+                    {% if admin == 1 %}
+					<div class="admin">
+                    <li>
+                        <a href="{{ app.url_generator.generate('getAdminArticle') }}">Admin création article</a>
+                    </li>
+                    <li>
+                        <a href="{{ app.url_generator.generate('getAdminTags') }}">Admin création tag</a>
+                    </li>
+					</div>
+                    {% endif %}
+                </ul>
+            </nav>
+            <div>
+            {% if user %}
+					<div class="user">
+                    <p>Bienvenue, {{ user.name }}</p>
+                    <a href="{{ app.url_generator.generate('logout') }}">Logout</a>
+					</div>
+            {% else  %}
+			<div class="logreg">
+                <a href="{{ app.url_generator.generate('login') }}">Login</a>
+                <a href="{{ app.url_generator.generate('register') }}">Register</a>
+			</div>
+            {% endif %}
+            </div>
+        </header>
+        <div id="content">{% block content %}{% endblock %}</div>
+        <div id="footer">
+		
+		<ul>
+		<li><a href="#">Nicolas Rabrenovic</a></li>
+		<li><a href="#">Facebook</li>
+		<li><a href="#">Twitter</li>
+		</ul>
+        </div>
+    </body>
+</html>
