@@ -1,26 +1,16 @@
 {% extends "layout.twig" %}
+{% block title %}Article{% endblock %}
 
 {% block content %}
-    <h1>Home</h1>
+    <h1> {{ article.title }} </h1>
     <section>
             <article>
-                <h2>{{ article.title }}</h2>
+              
                 <p>
                     {{ article.body }}
                 </p>
             </article>
 
-            <section>
-                <h2>Tweet :</h2>
-                {% for results in tweets %}
-                    {% for tweet in results %}
-                    <article>
-                        <p>
-                            {{ tweet.text }}
-                        </p>
-                    </article>
-                    {% endfor %}
-                {% endfor %}
-            </section>
+            
     </section>
 {% endblock %}

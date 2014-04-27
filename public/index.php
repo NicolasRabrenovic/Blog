@@ -47,6 +47,7 @@ $app->get('/article/{idArticle}', function ($idArticle) use ($app) {
 })
 ->bind('article');
 
+
 $app->get('/filter/{idTag}', function ($idTag) use ($app) {
     $c = new HomeController($app);
     return $c->getIndex($idTag);
@@ -87,6 +88,8 @@ $app->post('/register', function () use ($app) {
     return $c->postRegister();
 })
 ->bind('postRegister');
+
+
 
 /*********
 *

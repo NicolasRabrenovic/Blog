@@ -26,15 +26,11 @@ Class HomeController extends Controller
         $tag = new Tag($this->app);
         $tags = $tag->getTagsByArticle($idArticle);
 
-        $twitter = new Tweet($this->app);
+       
 
-        foreach ($tags as $tag) {
-            $result = $twitter->getTweetByApi($tag['name']);
-            $twitter->saveTweet($result);
-            $results[] = $result;
-        }
+       
 
-        $this->data['tweets'] = $results;
+       
 
         return $this->app['twig']->render('article.twig', $this->data);
     }

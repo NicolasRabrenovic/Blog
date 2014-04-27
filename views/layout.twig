@@ -2,7 +2,7 @@
 <html>
     <head>
     <link rel="stylesheet" type="text/css" href="{{ app.request.basepath }}/css/style.css">
-
+	<title> Blog - {% block title %}{% endblock %}</title>
     </head>
     <body>
         <header>
@@ -12,15 +12,15 @@
                 <ul>
                     <li class="logo">
                         <a href="{{ app.url_generator.generate('home') }}">Nicolas Rabrenovic <br>
-						<p>A another blog... </p></a>
+						<p>An other blog... </p></a>
                     </li>
                     {% if admin == 1 %}
 					<div class="admin">
                     <li>
-                        <a href="{{ app.url_generator.generate('getAdminArticle') }}">Admin création article</a>
+                        <a href="{{ app.url_generator.generate('getAdminArticle') }}"><img src="{{ app.request.basepath }}/img/newpost.png" alt="Nouvel Article"></a>
                     </li>
                     <li>
-                        <a href="{{ app.url_generator.generate('getAdminTags') }}">Admin création tag</a>
+                        <a href="{{ app.url_generator.generate('getAdminTags') }}"><img src="{{ app.request.basepath }}/img/newtag.png" alt="Nouvel Article"></a>
                     </li>
 					</div>
                     {% endif %}
