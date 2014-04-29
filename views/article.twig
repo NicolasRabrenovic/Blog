@@ -2,6 +2,16 @@
 {% block title %}{{ article.title }}{% endblock %}
 
 {% block content %}
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1&appId=281776665274999";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
     <h1> {{ article.title }} </h1>
     <section>
             <article>
@@ -22,11 +32,23 @@
 			{% if user is not empty %}
 				<h3>Ajouter un commentaire :</h3>
 				<form action="" method="post">
-					<textarea name="comment"></textarea>
+					<textarea name="comment"></textarea><br>
 					<input type="submit" value="Commenter">
 				</form>
+				
+			
+				
 			{% endif %}
+			
+			<h3>Partage :</h3>
+			        
+			<a href="https://twitter.com/share" class="twitter-share-button" data-via="NRabrenovic">Tweet</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+			<br>
+			<div class="fb-share-button" data-href="<?php echo $_SERVER["REQUEST_URI"];?>" data-type="button_count"></div>	
 			</section>
+			
+			
 				
             </article>
 

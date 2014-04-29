@@ -184,6 +184,7 @@ margin-right: 15px;
 .user {
 
 font-size: 16px;
+text-align: center;
 
 
 }
@@ -224,7 +225,14 @@ p {
 
 .admin-form {
 
+	text-align: center;
 	
+
+}
+
+.tag-admin {
+
+	text-align: center;
 
 }
 

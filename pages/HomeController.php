@@ -51,7 +51,7 @@ Class HomeController extends Controller
 				}
 			}
 
-			var_dump($idArticle);
+			
 		return $this->redirect('article', array('idArticle' => $idArticle));
 	
 	}
