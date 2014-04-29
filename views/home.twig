@@ -5,9 +5,9 @@
 {% block content %}
     <h1>Home</h1>
     <section>
-        {% for article in articles %}
+        {% for articleKey, article in articles %}
             <article>
-                <h2>{{ article.title }}</h2>
+                <h2><a href="{{ app.url_generator.generate('article', {idArticle: articleKey}) }}"> {{ article.title }}</a></h2>
                 <ul>
                     {% for idTag, tag in article.tags %}
                         {% if tag %}

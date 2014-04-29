@@ -48,6 +48,16 @@ $app->get('/article/{idArticle}', function ($idArticle) use ($app) {
 ->bind('article');
 
 
+
+
+//Commentaires
+$app->post('/article/{idArticle}', function ($idArticle) use ($app) {
+    $c = new HomeController($app);
+    return $c->postComment($idArticle);
+})
+->bind('postComment');
+
+
 $app->get('/filter/{idTag}', function ($idTag) use ($app) {
     $c = new HomeController($app);
     return $c->getIndex($idTag);

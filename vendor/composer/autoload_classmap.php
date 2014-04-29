@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'AdminController' => $baseDir . '/pages/AdminController.php',
     'Article' => $baseDir . '/models/Article.php',
+	'Comment' => $baseDir . '/models/Comment.php',
     'HomeController' => $baseDir . '/pages/HomeController.php',
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs/SessionHandlerInterface.php',
     'Tag' => $baseDir . '/models/Tag.php',

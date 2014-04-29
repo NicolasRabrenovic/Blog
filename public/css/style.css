@@ -16,6 +16,7 @@ body {
 
 	margin: auto;
 	width: 80%;
+	text-align: center;
 	
 }
 
@@ -73,6 +74,28 @@ h2 {
 
 }
 
+h2 a {
+
+
+	font-family: "jaf-bernino-sans","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+	letter-spacing: -0.02em;
+	font-weight: 700;
+	font-style: normal;
+	letter-spacing: -0.04em;
+	font-size: 50px;
+	line-height: 1.1;
+	margin-bottom: 8px;
+	color: #313131;
+
+
+}
+
+h2 a:hover {
+
+
+	color: #6B6B6B;
+
+}
 
 ul{
     list-style-type: none;
@@ -98,6 +121,13 @@ a {
 a:hover {
 
 	color: #0080FF;
+
+}
+
+hr {
+
+	width: 50%;
+
 
 }
 

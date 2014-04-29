@@ -1,5 +1,5 @@
 {% extends "layout.twig" %}
-{% block title %}Article{% endblock %}
+{% block title %}{{ article.title }}{% endblock %}
 
 {% block content %}
     <h1> {{ article.title }} </h1>
@@ -9,6 +9,25 @@
                 <p>
                     {{ article.body }}
                 </p>
+				
+			<section>
+			{% if comments is defined and comments is not empty %}
+				<h3>Commentaires :</h3>
+				<ul>
+					{% for comment in comments %}
+						<li>{{ comment.content }}</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+			{% if user is not empty %}
+				<h3>Ajouter un commentaire :</h3>
+				<form action="" method="post">
+					<textarea name="comment"></textarea>
+					<input type="submit" value="Commenter">
+				</form>
+			{% endif %}
+			</section>
+				
             </article>
 
             
